@@ -18,10 +18,11 @@ def get_sub_url():
         # 'https://www.ckcloud.xyz',
         # 'https://user.bafang.vip',
         # 'https://cloud.hhygj.xyz',
-        # 'https://feiniaoyun.top',
+        'https://feiniaoyun.top',
         # 'https://fastestcloud.xyz',
         'https://www.dgycom.com',
     )
+    subscription_dict = {}
     times = 1
     for current_url in home_urls:
         i = 0
@@ -40,9 +41,8 @@ def get_sub_url():
             try:
                 response = requests.post(current_url + V2B_REG_REL_URL, data=form_data, headers=header)
                 subscription_url = f'{current_url}/api/v1/client/subscribe?token={response.json()["data"]["token"]}'
-                # print(subscription_url)
-                print("add:" + subscription_url)
-                return subscription_url
+                subscription_dict[current_url] = subscription_url
+                return subscription_dict
             except:
                 print("获取订阅失败")
             i += 1

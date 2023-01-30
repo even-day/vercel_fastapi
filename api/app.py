@@ -11,5 +11,5 @@ async def root():
 
 @app.get('/v2')
 def v2():
-    subscription_url = get_sub_url()
-    return {"url": subscription_url}
+    subscription_dict = get_sub_url()
+    return subscription_dict
