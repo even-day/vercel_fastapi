@@ -495,9 +495,9 @@ def save_to_file(file_name, content):
         f.write(content)
 
 def main():
-    # sub_dict = requests.get('https://api.eaea.ml/v2').text
-    # sub_dict = eval(sub_dict)
-    sub_dict = {"https://www.dgycom.com":"https://www.dgycom.com/api/v1/client/subscribe?token=f0ba4ac658f69ec93ce90a9dccea6778"}
+    sub_dict = requests.get('https://api.eaea.ml/v2').text
+    sub_dict = eval(sub_dict)
+    # sub_dict = {"https://www.dgycom.com":"https://www.dgycom.com/api/v1/client/subscribe?token=f0ba4ac658f69ec93ce90a9dccea6778"}
     config_url = 'https://pan.eaea.ml/api/raw/?path=/model.yaml'
     config_path = 'api/static/model.yaml'
     if sub_dict is None or sub_dict == '':
