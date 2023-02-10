@@ -414,7 +414,7 @@ def add_proxies_to_model(data, model):
         raise ValueError('Invalid input: data should contain "proxy_list" and "proxy_names" keys')
 
     try:
-        data['proxy_list'] = remove_duplicates(data['proxy_list'])
+        data['proxy_list'] = data['proxy_list']
         if model.get('proxies') is None:
             model['proxies'] = data.get('proxy_list')
         else:
@@ -495,9 +495,9 @@ def save_to_file(file_name, content):
         f.write(content)
 
 def main():
-    sub_dict = requests.get('https://api.eaea.ml/v2').text
-    sub_dict = eval(sub_dict)
-    # sub_dict = {"https://feiniaoyun.top":"https://feiniaoyun.top/api/v1/client/subscribe?token=b19dfc8ccfa2c5142a78388338de8c1e","https://www.dgycom.com":"https://www.dgycom.com/api/v1/client/subscribe?token=a43dc781ec422ddef17a3a05797f30f9"}
+    # sub_dict = requests.get('https://api.eaea.ml/v2').text
+    # sub_dict = eval(sub_dict)
+    sub_dict = {"https://www.dgycom.com":"https://www.dgycom.com/api/v1/client/subscribe?token=f0ba4ac658f69ec93ce90a9dccea6778"}
     config_url = 'https://pan.eaea.ml/api/raw/?path=/model.yaml'
     config_path = 'api/static/model.yaml'
     if sub_dict is None or sub_dict == '':
