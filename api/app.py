@@ -3,7 +3,7 @@ from fastapi.responses import PlainTextResponse
 
 from api.v2 import get_sub_url
 from api.clash import main
-
+from api.clash2 import main2
 app = FastAPI()
 
 
@@ -20,4 +20,9 @@ def v2():
 @app.get('/clash',response_class=PlainTextResponse)
 def clash():
     content = main()
+    return content
+
+@app.get('/clash2',response_class=PlainTextResponse)
+def clash2():
+    content = main2()
     return content
