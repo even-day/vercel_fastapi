@@ -39,7 +39,7 @@ def clash2(link):
     return content
 
 
-@app.get('/one/{hub_url}')
-def v2(hub_url):
-    subscription_dict = get_hub_url(hub_url)
+@app.get('/one/')
+def v2(url):
+    subscription_dict = get_hub_url(url)
     return subscription_dict
