@@ -33,9 +33,9 @@ def clash2():
     return content
 
 
-@app.get('/raw/{link}', response_class=PlainTextResponse)
-def clash2(link):
-    content = return_raw(link)
+@app.get('/raw/', response_class=PlainTextResponse)
+def clash2(url):
+    content = return_raw(url)
     return content
 
 
