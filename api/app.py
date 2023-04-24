@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # 声明一个 源 列表；重点：要包含跨域的客户端 源
-origins = ["https://node-drw.pages.dev/"]
+origins = ["https://node-drw.pages.dev"]
 
 # 配置 CORSMiddleware
 app.add_middleware(
